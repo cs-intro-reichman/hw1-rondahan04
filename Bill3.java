@@ -8,6 +8,7 @@ public class Bill3 {
 		String bills = (args[3]);
 		int bill = Integer.parseInt(bills);
 		bill = bill/3;
+		Math.ceil(bill);
 		System.out.println ("Dear " + name1 + ", " + name2 + ", and " +name3 + ": " + "pay " + bill +" each.");
 	    // Replace this comment with the rest of your code   
 	}
