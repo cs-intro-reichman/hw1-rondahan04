@@ -12,39 +12,39 @@ public class TimeFormat {
 		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
-        	 if (hours > 11 ){ // gets in if its pm 12 and above
-					if ( hours == 12){ // its 12
-						if (minutes > 9){ // 10 and above mins
-							System.out.println (hours + ":" + minutes +" PM");
-						}
-							else
-							{
-							System.out.println (hours + ":" + "0" + minutes + " PM");
-							}
-					}
-						if (minutes > 9){ // gets in if minutes are 10 and above
-						System.out.println (hours-12 + ":" + minutes +" PM");
-						}
-							else { // minutes < 10
-							System.out.println (hours-12 + ":" + "0" + minutes + " PM");
-							}
+		if(hours > 11) {
+			if(hours == 12) { // its noon
+				if (minutes > 9){ // no need to add 0
+					System.out.println(hours + ":" + minutes + " PM");
+				} else { // adding 0 to mins
+					System.out.println(hours + ":0" + minutes + " PM");
+				}
+			}
+			else
+			{ // its PM but not midnight
+				if (minutes > 9) {
+					System.out.println(hours - 12 + ":" + minutes + " PM");
+				} else {
+					System.out.println(hours - 12 + ":0" + minutes + " PM");
+			  }
+			}
+		}
 
+		else if(hours == 0) { // its midnight
+			{
+				if (minutes > 9) {
+					System.out.println("0:" + minutes + " AM");
+				} else {
+					System.out.println("0:0" + minutes + " AM");
+			  }
 			}
-			else { // gets in if its am
-				if (minutes > 9){ // minutes are 10 and above
+		}
+		else { // its AM but not midnight
+				if (minutes > 9) {
 					System.out.println(hours + ":" + minutes + " AM");
+				} else {
+					System.out.println(hours + ":0" + minutes + " AM");
 				}
-					else{ // minutes < 10
-						System.out.println (hours + ":" + "0" + minutes +" AM");
-					}
-			}
-			if (hours == 0){ // midnight
-				if (minutes > 9){ // minutes are 10 and above
-					System.out.println (hours + "0:" + minutes +" AM");
-				}
-					else{ // minutes < 10
-						System.out.println (hours + "0:0" + minutes + " AM");
-					}
-				}	
+		}
 	}
 }
