@@ -12,28 +12,37 @@ public class TimeFormat {
 		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
-        	 if (hours > 12 ){
-				if (minutes > 9){
-					System.out.println (hours-12 + ":" + minutes +" PM");
-				}
-					else {
-						System.out.println (hours-12 + ":" + "0" + minutes + " PM");
+        	 if (hours > 11 ){ // gets in if its pm 12 and above
+					if ( hours == 12){
+						if (minutes > 9){
+							System.out.println (hours + ":" + minutes+" PM");
+						}
+							else
+							{
+							System.out.println (hours + ":" + "0" + minutes +" PM");
+							}
 					}
+						if (minutes > 9){ // gets in if minutes are 10 and above
+						System.out.println (hours-12 + ":" + minutes +" PM");
+						}
+							else { // minutes < 10
+							System.out.println (hours-12 + ":" + "0" + minutes + " PM");
+							}
 
 			}
-			else {
-				if (minutes > 9){
+			else { // gets in if its am
+				if (minutes > 9){ // minutes are 10 and above
 					System.out.println(hours + ":" + minutes + " AM");
 				}
-					else{
+					else{ // minutes < 10
 						System.out.println (hours + ":" + "0" + minutes +" AM");
 					}
 			}
-				if (hours == 0){
-					if (minutes > 9){
-						System.out.println (hours + "0:" +" AM");
-					}
-					else{
+			if (hours == 0){ // midnight
+				if (minutes > 9){ // minutes are 10 and above
+					System.out.println (hours + "0:" +" AM");
+				}
+					else{ // minutes < 10
 						System.out.println (hours + "0:0" + " AM");
 					}
 				}	
