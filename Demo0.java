@@ -7,6 +7,6 @@ public class Demo0 {
             System.out.println(i); // Prints i
             i = i  + 1; 
         }
-        System.out.println("Done"); 
+        System.out.println("Done");  // finished
     }
  }
